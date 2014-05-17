@@ -1,0 +1,48 @@
+
+extends layout
+
+block content
+	div.navbar.navbar-fixed-top
+		div.navbar-inner
+			div.container-fluid
+				ul#global-nav.nav.pull-left
+					a(href='#').brand Control Panel
+				button#btn-logout.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign Out
+	include modals/alert
+	include modals/confirm
+	p test
+	p haha
+	p Voici le comparateur de prix , donnez lui une URL
+
+	p #{test6}
+	p #{testProduct}
+	p #{testPrice}
+	form( method="post")#test4-form
+	input#radio0(type="radio", name="selectedWebsite",  value="Amazon", checked=true) 
+	|Amazon
+	input#radio1(type="radio", name="selectedWebsite", value="FutureShop", checked=false)
+	|FutureShop
+	input#inputURL(type="text", placeholder="URLamazon", name="search", id="search")
+	button#btnScraping(type="submit") Goooo
+
+	form#formAddProduct(name="addproduct",method="post",action="/addproduct")
+	input#inputProduct(type="text", placeholder="product", name="product", id="product", value='#{productname}') 
+	input#inputPrice(type="text", placeholder="price", name="price", id="price",  value='#{price}') 
+	input#inputUrl(type="hidden", placeholder="url", name="url", id="url",  value='#{url}')
+	input#inputUrl(type="hidden", placeholder="website", name="website", id="website",  value='#{website}')
+	button#btnSubmit(type="submit") submit
+block scripts
+	script(src='/vendor/jquery.min.js')
+	script(src='/vendor/jquery.form.js')
+	script(src='/vendor/bootstrap-modal.js')
+	script(src='/vendor/bootstrap-transition.js')
+	script(src='/js/views/home.js')
+	script(src='/js/controllers/homeController.js')
+	script(src='/js/form-validators/accountValidator.js')
+	script(src='js/controllers/priceController.js')
+	script(src='/js/views/test4.js')
+	script(src='./server/router.js')
+	script(src='./server/modules/test.js')
+	

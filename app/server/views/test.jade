@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    p Voici le comparateur de prix , donnez lui une URL
+    form#formAddUser(name="findprice",method="post",action="/compareprice")
+        input#inputURL(type="text", placeholder="URLamazon", name="produit")
+        button#btnSubmit(type="submit") Goooo
+    p #{pageData}
+    br
+    p #{pageData2}
+    form#formAddProduct(name="addproduct",method="post",action="/addproduct")
+        input#inputProduct(type="text", placeholder="product", name="product" value='#{productname}')
+        input#inputPrice(type="text", placeholder="price", name="price")
+        input#inputUser(type="text", placeholder="user", name="user")
+        button#btnSubmit(type="submit") submit
