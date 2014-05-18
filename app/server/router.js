@@ -53,17 +53,17 @@ module.exports = function(app) {
     
     );
     
-    app.get('/test3', function(req, res) {
-	console.log('acces a test3');
+//    app.get('/test3', function(req, res) {
+//	console.log('acces a test3');
 //	console.log(req.body.produit);
 	
-res.render('test3');
+// res.render('test3');
 	
-	});
+//	});
 	
     //Bouton de productsaved pour supprimer un produit suivi
     app.post('/produit/:id/delete', function (req,res) {
-        console.log("Je suis dans router.js deletepost");
+        console.log("Je suis da/ns router.js deletepost");
         PC.delete(req.param('_id'),function(err,o){
             res.redirect('/productsaved');
         });
@@ -178,13 +178,13 @@ res.render('test3');
     
  
 
-	app.get('/test2', function(req, res) {
-	console.log('acces a test2');
+//	app.get('/test2', function(req, res) {
+//	console.log('acces a test2');
 //	console.log(req.body.produit);
+//	
+//res.render('test2', { test6: "omaha" });
 	
-res.render('test2', { test6: "omaha" });
-	
-	});
+//	});
 
 
 
@@ -223,7 +223,8 @@ res.render('test2', { test6: "omaha" });
 					res.cookie('user', o.user, { maxAge: 900000 });
 					res.cookie('pass', o.pass, { maxAge: 900000 });
 				}
-				console.log('send 200');
+			//	console.log('send 200');
+			//	console.log(o);
 				res.send(o, 200);
 			}
 		});

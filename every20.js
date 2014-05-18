@@ -3,4 +3,4 @@
 
 exports.s = function () {
     console.log("s");
-}
+};

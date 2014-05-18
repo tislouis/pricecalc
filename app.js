@@ -32,7 +32,7 @@ app.configure('development', function(){
 require('./app/server/router')(app);
 
 //test pour point dentree du scheduler
-setInterval(function() { PC.scheduler(); }, 100000);
+//setInterval(function() { PC.scheduler(); }, 100000);
 
 http.createServer(app).listen(app.get('port'), function(){
 	console.log("Express server listening on port " + app.get('port'));
